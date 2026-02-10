@@ -1,0 +1,1 @@
+# japanarc-template-01
