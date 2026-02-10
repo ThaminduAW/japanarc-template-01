@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox - Japan ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#1E3A8A', // Deep Blue
+                            600: '#1e40af',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#DC2626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased h-screen flex">
+
+    <!-- Sidebar Container -->
+    <div id="sidebar-container" class="transition-all duration-300 z-30"></div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Topbar -->
+        <div id="topbar-container"></div>
+
+        <!-- Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 bg-gray-50">
+            <div
+                class="max-w-6xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row h-[calc(100vh-8rem)] overflow-hidden">
+
+                <!-- Message List -->
+                <div class="w-full md:w-1/3 border-r border-gray-100 flex flex-col">
+                    <div class="p-4 border-b border-gray-100">
+                        <div class="relative">
+                            <input type="text" placeholder="Search messages..."
+                                class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-brand-500">
+                            <svg class="w-5 h-5 text-gray-400 absolute left-3 top-2.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 overflow-y-auto">
+                        <!-- Item 1 (Active) -->
+                        <div
+                            class="p-4 border-b border-gray-50 hover:bg-gray-50 cursor-pointer bg-brand-50/50 border-l-4 border-l-brand-600">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="text-sm font-bold text-gray-900">Admin Support</h4>
+                                <span class="text-xs text-brand-600 font-bold">10:30 AM</span>
+                            </div>
+                            <p class="text-xs font-medium text-gray-900 mb-1">Visa Document Approved</p>
+                            <p class="text-xs text-gray-500 line-clamp-2">Your bank statement has been verified. Please
+                                proceed to the next step of your application.</p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div
+                            class="p-4 border-b border-gray-50 hover:bg-gray-50 cursor-pointer border-l-4 border-l-transparent">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="text-sm font-bold text-gray-900">Yuki Teacher</h4>
+                                <span class="text-xs text-gray-400">Yesterday</span>
+                            </div>
+                            <p class="text-xs font-medium text-gray-900 mb-1">Homework Feedback</p>
+                            <p class="text-xs text-gray-500 line-clamp-2">Good job on your essay! I have left some
+                                comments regarding your use of particles.</p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div
+                            class="p-4 border-b border-gray-50 hover:bg-gray-50 cursor-pointer border-l-4 border-l-transparent opacity-70">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="text-sm font-bold text-gray-900">System</h4>
+                                <span class="text-xs text-gray-400">Feb 08</span>
+                            </div>
+                            <p class="text-xs font-medium text-gray-900 mb-1">Payment Receipt #9923</p>
+                            <p class="text-xs text-gray-500 line-clamp-2">Thank you for your payment of ¥50,000. Your
+                                invoice is attached.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Detail -->
+                <div class="hidden md:flex flex-1 flex-col bg-white">
+                    <div class="p-6 border-b border-gray-100 flex justify-between items-start">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 mb-1">Visa Document Approved</h2>
+                            <div class="flex items-center gap-2 text-sm text-gray-500">
+                                <span>From: <span class="font-medium text-gray-900">Admin Support</span></span>
+                                <span>&bull;</span>
+                                <span>To: <span class="font-medium text-gray-900">Me</span></span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                                </svg>
+                            </button>
+                            <button class="p-2 text-gray-400 hover:text-red-600 rounded-full hover:bg-gray-100">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 p-6 overflow-y-auto">
+                        <div class="prose max-w-none text-sm text-gray-700">
+                            <p>Dear Student,</p>
+                            <p>We are pleased to inform you that your submitted documents for the "Certificate of
+                                Eligibility" application have been reviewed and approved by our immigration staff.</p>
+                            <p><strong>Approved Documents:</strong></p>
+                            <ul class="list-disc pl-5">
+                                <li>Bank Statement (Oct-Dec)</li>
+                                <li>Passport Scan</li>
+                                <li>Graduation Certificate</li>
+                            </ul>
+                            <p class="mt-4">Please proceed to "Step 4: Interview Preparation" in your dashboard to
+                                schedule your mock interview with our counselors.</p>
+                            <p class="mt-6">Best Regards,<br>Japan ARC Team</p>
+                        </div>
+
+                        <div class="mt-8 border-t border-gray-100 pt-6">
+                            <button
+                                class="bg-brand-900 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-brand-800 shadow-lg">
+                                Reply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Init Script -->
+    <script src="../js/auth-mock.js"></script>
+    <script src="../js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const auth = new Auth();
+
+            let user = auth.getUser();
+            if (!user) {
+                // Default to logged in user or Student
+                user = { name: 'Kenji Sato', role: 'student', avatar: 'https://ui-avatars.com/api/?name=Kenji+Sato' };
+            }
+
+            // Pass role to sidebar. If user is staff, show staff sidebar
+            renderSidebar(user.role, 'notifications', '../');
+            renderTopbar(user, 'Notifications');
+        });
+    </script>
+</body>
+
+</html>

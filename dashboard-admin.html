@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Japan ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#1E3A8A', // Deep Blue
+                            600: '#1e40af',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#DC2626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased h-screen flex">
+
+    <!-- Sidebar Container -->
+    <div id="sidebar-container" class="transition-all duration-300 z-30"></div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Topbar -->
+        <div id="topbar-container"></div>
+
+        <!-- Dashboard Content -->
+        <main class="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-50">
+
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <p class="text-sm font-medium text-gray-500">Total Revenue (MRR)</p>
+                    <p class="text-3xl font-bold text-brand-900 mt-2">¥ 12.5M</p>
+                    <span class="text-xs text-green-600 font-medium inline-flex items-center mt-1">
+                        <svg class="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        +12% from last month
+                    </span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <p class="text-sm font-medium text-gray-500">Active Students</p>
+                    <p class="text-3xl font-bold text-brand-900 mt-2">482</p>
+                    <span class="text-xs text-green-600 font-medium inline-flex items-center mt-1">
+                        <svg class="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        +5% from last month
+                    </span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <p class="text-sm font-medium text-gray-500">Visa Success Rate</p>
+                    <p class="text-3xl font-bold text-brand-900 mt-2">98.5%</p>
+                    <span class="text-xs text-gray-400 mt-1 block">Based on last 200 applications</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <p class="text-sm font-medium text-gray-500">Pending Approvals</p>
+                    <p class="text-3xl font-bold text-red-600 mt-2">15</p>
+                    <span class="text-xs text-red-600 font-medium inline-flex items-center mt-1">Requires Action</span>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Recent Audit Log -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+                        <h3 class="font-bold text-gray-900">System Audit Logs</h3>
+                        <a href="audit/audit-logs.html"
+                            class="text-sm text-brand-600 font-medium hover:text-brand-800">View All</a>
+                    </div>
+                    <table class="min-w-full text-left text-sm whitespace-nowrap">
+                        <thead class="bg-gray-50 text-gray-500 font-medium">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">User</th>
+                                <th scope="col" class="px-6 py-3">Action</th>
+                                <th scope="col" class="px-6 py-3">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-6 py-3 flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-gray-200"></div>
+                                    <span class="font-medium text-gray-900">Sarah Staff</span>
+                                </td>
+                                <td class="px-6 py-3 text-gray-600">Approved Payment #INV-001</td>
+                                <td class="px-6 py-3 text-gray-400 text-xs">2 min ago</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-3 flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-gray-200"></div>
+                                    <span class="font-medium text-gray-900">Kenji Sato</span>
+                                </td>
+                                <td class="px-6 py-3 text-gray-600">Uploaded Document "Passport"</td>
+                                <td class="px-6 py-3 text-gray-400 text-xs">15 min ago</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-3 flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-gray-200"></div>
+                                    <span class="font-medium text-gray-900">Admin User</span>
+                                </td>
+                                <td class="px-6 py-3 text-gray-600">Updated Course "JLPT N4"</td>
+                                <td class="px-6 py-3 text-gray-400 text-xs">1 hour ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Admin Action Center -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <h3 class="font-bold text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button
+                            class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-center group transition-colors">
+                            <div
+                                class="w-10 h-10 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl group-hover:scale-110 transition-transform">
+                                +</div>
+                            <span class="font-bold text-gray-900 block">Add User</span>
+                            <span class="text-xs text-gray-500">Student or Staff</span>
+                        </button>
+                        <button
+                            class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-center group transition-colors">
+                            <div
+                                class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl group-hover:scale-110 transition-transform">
+                                $</div>
+                            <span class="font-bold text-gray-900 block">Record Payment</span>
+                            <span class="text-xs text-gray-500">Manual Entry</span>
+                        </button>
+                        <button
+                            class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-center group transition-colors">
+                            <div
+                                class="w-10 h-10 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl group-hover:scale-110 transition-transform">
+                                📢</div>
+                            <span class="font-bold text-gray-900 block">Broadcast</span>
+                            <span class="text-xs text-gray-500">Send Notification</span>
+                        </button>
+                        <button
+                            class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-center group transition-colors">
+                            <div
+                                class="w-10 h-10 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl group-hover:scale-110 transition-transform">
+                                ⚙️</div>
+                            <span class="font-bold text-gray-900 block">Settings</span>
+                            <span class="text-xs text-gray-500">System Config</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Init Script -->
+    <script src="js/auth-mock.js"></script>
+    <script src="js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const auth = new Auth();
+
+            let user = auth.getUser();
+            if (!user) {
+                user = { name: 'Admin User', role: 'admin', avatar: 'https://ui-avatars.com/api/?name=Admin+User' };
+            }
+
+            // Render Components
+            renderSidebar('admin', 'dashboard');
+            renderTopbar(user, 'Admin Dashboard');
+        });
+    </script>
+</body>
+
+</html>

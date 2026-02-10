@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Japan ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#1E3A8A', // Deep Blue
+                            600: '#1e40af',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#DC2626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased h-screen flex">
+
+    <!-- Sidebar Container -->
+    <div id="sidebar-container" class="transition-all duration-300 z-30"></div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Topbar -->
+        <div id="topbar-container"></div>
+
+        <!-- Dashboard Content -->
+        <main class="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-50">
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-8">
+                <!-- Upcoming Schedule -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-gray-900 text-lg">Today's Schedule</h3>
+                        <p class="text-sm text-gray-500">Feb 10, 2026</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Class 1: Active -->
+                        <div
+                            class="flex items-start gap-4 p-4 bg-brand-50 border border-brand-200 rounded-lg relative overflow-hidden">
+                            <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-500"></div>
+                            <div class="flex-shrink-0 w-16 text-center">
+                                <span class="block text-2xl font-bold text-brand-700">10:00</span>
+                                <span class="text-xs text-brand-500 uppercase font-bold">AM</span>
+                            </div>
+                            <div class="flex-1 border-l border-brand-200 pl-4">
+                                <div class="flex justify-between">
+                                    <h4 class="font-bold text-brand-900">N4 Grammar: Particles</h4>
+                                    <span
+                                        class="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-bold rounded-full animate-pulse">Live
+                                        Now</span>
+                                </div>
+                                <p class="text-sm text-brand-700 mb-2">Classroom A • 15 Students</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="flex -space-x-2">
+                                        <img class="w-8 h-8 rounded-full border-2 border-white"
+                                            src="https://ui-avatars.com/api/?name=S+T&background=random" alt="">
+                                        <img class="w-8 h-8 rounded-full border-2 border-white"
+                                            src="https://ui-avatars.com/api/?name=K+S&background=random" alt="">
+                                        <img class="w-8 h-8 rounded-full border-2 border-white"
+                                            src="https://ui-avatars.com/api/?name=A+B&background=random" alt="">
+                                        <div
+                                            class="w-8 h-8 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-xs font-bold text-gray-600">
+                                            +12</div>
+                                    </div>
+                                    <button
+                                        class="px-4 py-1.5 bg-brand-600 text-white text-sm font-medium rounded hover:bg-brand-700 transition-colors">Join
+                                        Zoom</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Class 2: Upcoming -->
+                        <div
+                            class="flex items-start gap-4 p-4 hover:bg-gray-50 border border-transparent hover:border-gray-200 rounded-lg transition-colors">
+                            <div class="flex-shrink-0 w-16 text-center text-gray-500">
+                                <span class="block text-2xl font-bold">13:00</span>
+                                <span class="text-xs uppercase font-bold">PM</span>
+                            </div>
+                            <div class="flex-1 border-l border-gray-200 pl-4 opacity-80">
+                                <h4 class="font-bold text-gray-900">Speaking Practice: Roleplay</h4>
+                                <p class="text-sm text-gray-500">Zoom • 8 Students</p>
+                            </div>
+                        </div>
+
+                        <!-- Class 3: Upcoming -->
+                        <div
+                            class="flex items-start gap-4 p-4 hover:bg-gray-50 border border-transparent hover:border-gray-200 rounded-lg transition-colors">
+                            <div class="flex-shrink-0 w-16 text-center text-gray-500">
+                                <span class="block text-2xl font-bold">15:30</span>
+                                <span class="text-xs uppercase font-bold">PM</span>
+                            </div>
+                            <div class="flex-1 border-l border-gray-200 pl-4 opacity-80">
+                                <h4 class="font-bold text-gray-900">N3 Reading Comprehension</h4>
+                                <p class="text-sm text-gray-500">Classroom B • 20 Students</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grading / To-Do -->
+                <div class="space-y-6">
+                    <!-- Grading Card -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                        <h3 class="font-bold text-gray-900 mb-4">Needs Grading</h3>
+                        <div class="space-y-4">
+                            <div
+                                class="flex justify-between items-center bg-yellow-50 p-3 rounded-lg border border-yellow-100">
+                                <div>
+                                    <p class="font-bold text-yellow-900 text-sm">Speaking Test - Batch A</p>
+                                    <p class="text-xs text-yellow-700">5 pending submissions</p>
+                                </div>
+                                <button
+                                    class="px-3 py-1 bg-white border border-yellow-200 text-yellow-800 text-xs font-semibold rounded hover:bg-yellow-100">Grade</button>
+                            </div>
+                            <div
+                                class="flex justify-between items-center bg-gray-50 p-3 rounded-lg border border-gray-200">
+                                <div>
+                                    <p class="font-bold text-gray-900 text-sm">Essay: "My Dream"</p>
+                                    <p class="text-xs text-gray-500">12 pending submissions</p>
+                                </div>
+                                <button
+                                    class="px-3 py-1 bg-white border border-gray-200 text-gray-700 text-xs font-semibold rounded hover:bg-gray-100">Grade</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- At Risk Students -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-bold text-gray-900">At-Risk Students</h3>
+                            <a href="#" class="text-xs text-brand-600 font-medium">View Report</a>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-xs">
+                                        TR</div>
+                                    <div>
+                                        <p class="text-xs font-bold">Taro R.</p>
+                                        <p class="text-[10px] text-gray-500">Attendance: 75%</p>
+                                    </div>
+                                </div>
+                                <button class="text-xs text-brand-600 hover:underline">Message</button>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-xs">
+                                        JM</div>
+                                    <div>
+                                        <p class="text-xs font-bold">John M.</p>
+                                        <p class="text-[10px] text-gray-500">Grades: Falling</p>
+                                    </div>
+                                </div>
+                                <button class="text-xs text-brand-600 hover:underline">Message</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Init Script -->
+    <script src="js/auth-mock.js"></script>
+    <script src="js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const auth = new Auth();
+
+            let user = auth.getUser();
+            if (!user) {
+                user = { name: 'Yuki Teacher', role: 'teacher', avatar: 'https://ui-avatars.com/api/?name=Yuki+Teacher' };
+            }
+
+            // Render Components
+            renderSidebar('teacher', 'dashboard');
+            renderTopbar(user, 'Teacher Dashboard');
+        });
+    </script>
+</body>
+
+</html>

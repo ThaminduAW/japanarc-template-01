@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan ARC - Module</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                             50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#1E3A8A', // Deep Blue
+                            600: '#1e40af',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#DC2626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased h-screen flex">
+
+    <!-- Sidebar Container -->
+    <div id="sidebar-container" class="transition-all duration-300 z-30"></div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Topbar -->
+        <div id="topbar-container"></div>
+
+        <!-- Content -->
+        <main class="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-50 flex items-center justify-center">
+            <div class="text-center">
+                <div class="w-24 h-24 bg-brand-100 text-brand-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Module Under Development</h2>
+                <p class="text-gray-500 mb-8 max-w-md mx-auto">This feature is part of the rigorous Japan ARC curriculum but is currently being built by our engineering team.</p>
+                <button onclick="window.history.back()" class="px-6 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition">Go Back</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Init Script -->
+    <script src="../js/auth-mock.js"></script>
+    <script src="../js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             const auth = new Auth();
+            
+            let user = auth.getUser();
+            if (!user) {
+                // If viewing directly, mock a user based on folder context maybe?
+                // Or just redirect
+                // user = { name: 'Guest', role: 'student', avatar: '' };
+                window.location.href = '../login.html';
+                return;
+            }
+            
+            // Heuristic for active ID
+            const path = window.location.pathname;
+            const filename = path.split('/').pop().replace('.html','');
+            
+            // Map filename to ID if possible, or generic
+            // This relies on NAV_ITEMS ids matching filenames loosely or fallback
+            
+            renderSidebar(user.role, filename, '../');
+            renderTopbar(user, filename.replace(/-/g, ' ').toUpperCase());
+        });
+    </script>
+</body>
+</html>

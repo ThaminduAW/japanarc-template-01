@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form - Japan ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#1E3A8A', // Deep Blue
+                            600: '#1e40af',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#DC2626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased h-screen flex">
+
+    <!-- Sidebar Container -->
+    <div id="sidebar-container" class="transition-all duration-300 z-30"></div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Topbar -->
+        <div id="topbar-container"></div>
+
+        <!-- Content -->
+        <main class="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-50">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900">Student Visa Application</h2>
+                        <p class="text-sm text-gray-500 mt-1">Please complete all sections accurately for immigration
+                            purposes.</p>
+                    </div>
+                    <div class="text-right">
+                        <span
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span> Draft Saved
+                        </span>
+                        <p class="text-xs text-gray-400 mt-1">Last saved: 2 mins ago</p>
+                    </div>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="mb-10">
+                    <nav aria-label="Progress">
+                        <ol role="list" class="flex items-center">
+                            <!-- Step 1: Completed -->
+                            <li class="relative pr-8 sm:pr-20">
+                                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                    <div class="h-0.5 w-full bg-brand-600"></div>
+                                </div>
+                                <a href="#"
+                                    class="relative flex h-8 w-8 items-center justify-center rounded-full bg-brand-600 hover:bg-brand-900">
+                                    <svg class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <span
+                                    class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-medium text-brand-600">Personal</span>
+                            </li>
+                            <!-- Step 2: Current -->
+                            <li class="relative pr-8 sm:pr-20">
+                                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                    <div class="h-0.5 w-full bg-gray-200"></div>
+                                    <div class="h-0.5 w-1/2 bg-brand-600 absolute l-0"></div>
+                                </div>
+                                <a href="#"
+                                    class="relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-brand-600 bg-white"
+                                    aria-current="step">
+                                    <span class="h-2.5 w-2.5 rounded-full bg-brand-600" aria-hidden="true"></span>
+                                </a>
+                                <span
+                                    class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-bold text-gray-900">Education</span>
+                            </li>
+                            <!-- Step 3: Pending -->
+                            <li class="relative pr-8 sm:pr-20">
+                                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                    <div class="h-0.5 w-full bg-gray-200"></div>
+                                </div>
+                                <a href="#"
+                                    class="relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 bg-white hover:border-gray-400">
+                                    <span class="h-2.5 w-2.5 rounded-full bg-transparent" aria-hidden="true"></span>
+                                </a>
+                                <span
+                                    class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-500">History</span>
+                            </li>
+                            <!-- Step 4: Pending -->
+                            <li class="relative">
+                                <a href="#"
+                                    class="relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 bg-white hover:border-gray-400">
+                                    <span class="h-2.5 w-2.5 rounded-full bg-transparent" aria-hidden="true"></span>
+                                </a>
+                                <span
+                                    class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-500">Review</span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Form Section -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-8 space-y-8">
+                        <!-- Education History -->
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Educational Background</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Last School
+                                        Attended</label>
+                                    <input type="text" value="University of Colombo"
+                                        class="w-full rounded-md border-gray-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-2 px-3 border text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Graduation Date</label>
+                                    <input type="date" value="2023-12-15"
+                                        class="w-full rounded-md border-gray-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-2 px-3 border text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Degree /
+                                        Qualification</label>
+                                    <input type="text" value="Bachelor of Science in IT"
+                                        class="w-full rounded-md border-gray-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-2 px-3 border text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Japanese Level</label>
+                                    <select
+                                        class="w-full rounded-md border-gray-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-2 px-3 border text-sm">
+                                        <option>Beginner (N5)</option>
+                                        <option selected>Basic (N4)</option>
+                                        <option>Intermediate (N3)</option>
+                                        <option>Advanced (N2/N1)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work History -->
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">Employment History (Last 5
+                                Years)</h3>
+
+                            <div class="bg-gray-50 p-4 rounded-lg mb-4 border border-gray-200 relative group">
+                                <button
+                                    class="absolute top-2 right-2 text-gray-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </button>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label
+                                            class="block text-xs font-semibold text-gray-500 uppercase">Company</label>
+                                        <p class="text-sm font-bold text-gray-900">Tech Solutions Ltd</p>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-gray-500 uppercase">Role</label>
+                                        <p class="text-sm font-medium text-gray-900">Junior Developer</p>
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-xs font-semibold text-gray-500 uppercase">Period</label>
+                                        <p class="text-sm text-gray-600">Jan 2024 - Present</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-full py-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 font-medium hover:border-brand-500 hover:text-brand-600 hover:bg-brand-50 transition-colors flex items-center justify-center gap-2">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4v16m8-8H4" />
+                                </svg>
+                                Add Employment Record
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-8 flex justify-between items-center">
+                    <button
+                        class="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50">Back</button>
+                    <div class="flex gap-4">
+                        <button
+                            class="px-6 py-3 border border-brand-200 text-brand-700 font-medium rounded-lg hover:bg-brand-50">Save
+                            Draft</button>
+                        <button
+                            class="px-8 py-3 bg-brand-900 text-white font-bold rounded-lg hover:bg-brand-800 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">Next
+                            Step</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Init Script -->
+    <script src="../js/auth-mock.js"></script>
+    <script src="../js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const auth = new Auth();
+
+            let user = auth.getUser();
+            if (!user) {
+                user = { name: 'Kenji Sato', role: 'student', avatar: 'https://ui-avatars.com/api/?name=Kenji+Sato' };
+            }
+
+            // Render Components with '../' base path
+            renderSidebar('student', 'application', '../');
+            renderTopbar(user, 'Application Form');
+        });
+    </script>
+</body>
+
+</html>

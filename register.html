@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Japan ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#1E3A8A', // Deep Blue
+                            600: '#1e40af',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#DC2626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .japan-bg {
+            background-image: url('https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="h-screen flex overflow-hidden bg-gray-50">
+
+    <!-- Left Side - Image -->
+    <div class="hidden lg:block lg:w-1/2 japan-bg relative">
+        <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-[1px]"></div>
+        <div class="absolute inset-0 flex flex-col justify-between p-12 text-white">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-brand-900 font-bold text-sm">
+                    JA</div>
+                <span class="font-jp font-bold text-xl">JAPAN ARC</span>
+            </div>
+            <div>
+                <blockquote class="text-2xl font-light mb-6">
+                    "Start where you are. Use what you have. Do what you can."
+                </blockquote>
+                <p class="font-jp text-lg opacity-90">今いる場所から始めよ</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Side - Form -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-8 overflow-y-auto">
+        <div class="w-full max-w-md space-y-8">
+            <div class="text-center">
+                <div class="lg:hidden flex justify-center mb-6">
+                    <div
+                        class="w-12 h-12 bg-brand-900 rounded-full flex items-center justify-center text-white font-bold text-xl relative">
+                        <div
+                            class="absolute w-4 h-4 bg-accent-500 rounded-full top-0 right-0 transform translate-x-1 -translate-y-1">
+                        </div>
+                        JA
+                    </div>
+                </div>
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900">Create your account</h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    Apply for admission and start your journey.
+                </p>
+            </div>
+
+            <form class="mt-8 space-y-6" action="login.html">
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <label for="name" class="sr-only">Full Name</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required
+                            class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-brand-500 focus:border-brand-500 focus:z-10 sm:text-sm"
+                            placeholder="Full Name">
+                    </div>
+                    <div>
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required
+                            class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-brand-500 focus:border-brand-500 focus:z-10 sm:text-sm"
+                            placeholder="Email address">
+                    </div>
+                    <div>
+                        <label for="password" class="sr-only">Password</label>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required
+                            class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-brand-500 focus:border-brand-500 focus:z-10 sm:text-sm"
+                            placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    <input id="terms" name="terms" type="checkbox"
+                        class="h-4 w-4 text-brand-600 focus:ring-brand-500 border-gray-300 rounded" required>
+                    <label for="terms" class="ml-2 block text-sm text-gray-900">
+                        I agree to the <a href="#" class="text-brand-600 hover:text-brand-500">Terms</a> and <a href="#"
+                            class="text-brand-600 hover:text-brand-500">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <div>
+                    <button type="submit"
+                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-brand-900 hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 shadow-lg transition-colors">
+                        Create Account
+                    </button>
+                </div>
+            </form>
+
+            <p class="mt-2 text-center text-sm text-gray-600">
+                Already have an account? <a href="login.html"
+                    class="font-medium text-brand-600 hover:text-brand-500">Sign in</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

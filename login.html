@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Japan ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            500: '#1E3A8A',
+                            600: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#DC2626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .japan-bg {
+            background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="h-screen flex overflow-hidden bg-gray-50">
+
+    <!-- Left Side - Image -->
+    <div class="hidden lg:block lg:w-1/2 japan-bg relative">
+        <div class="absolute inset-0 bg-brand-900/40 backdrop-blur-[2px]"></div>
+        <div class="absolute inset-0 flex flex-col justify-between p-12 text-white">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-brand-900 font-bold text-sm">
+                    JA</div>
+                <span class="font-jp font-bold text-xl">JAPAN ARC</span>
+            </div>
+            <div>
+                <blockquote class="text-2xl font-light mb-6">
+                    "The journey of a thousand miles begins with a single step."
+                </blockquote>
+                <p class="font-jp text-lg opacity-90">千里の道も一歩から</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Side - Form -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-8 overflow-y-auto">
+        <div class="w-full max-w-md space-y-8">
+            <div class="text-center">
+                <div class="lg:hidden flex justify-center mb-6">
+                    <div
+                        class="w-12 h-12 bg-brand-900 rounded-full flex items-center justify-center text-white font-bold text-xl relative">
+                        <div
+                            class="absolute w-4 h-4 bg-accent-500 rounded-full top-0 right-0 transform translate-x-1 -translate-y-1">
+                        </div>
+                        JA
+                    </div>
+                </div>
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900">Welcome back</h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    Sign in to access your dashboard provided by <span class="font-medium text-brand-600">Japan
+                        ARC</span>.
+                </p>
+            </div>
+
+            <form class="mt-8 space-y-6" id="loginForm">
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required
+                            class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-brand-500 focus:border-brand-500 focus:z-10 sm:text-sm"
+                            placeholder="Email address" value="student@japanarc.com">
+                    </div>
+                    <div>
+                        <label for="password" class="sr-only">Password</label>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required
+                            class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-brand-500 focus:border-brand-500 focus:z-10 sm:text-sm"
+                            placeholder="Password" value="password">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox"
+                            class="h-4 w-4 text-brand-600 focus:ring-brand-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
+                    </div>
+
+                    <div class="text-sm">
+                        <a href="forgot-password.html" class="font-medium text-brand-600 hover:text-brand-500"> Forgot
+                            password? </a>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit"
+                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-brand-900 hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-colors shadow-lg">
+                        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                            <svg class="h-5 w-5 text-brand-500 group-hover:text-brand-400"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        Sign in
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6">
+                <!-- Helper for demo purposes -->
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-gray-50 text-gray-500"> Demo Logins </span>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <button onclick="fillLogin('student@japanarc.com')"
+                        class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-xs font-medium text-gray-500 hover:bg-gray-50">
+                        Student
+                    </button>
+                    <button onclick="fillLogin('staff@japanarc.com')"
+                        class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-xs font-medium text-gray-500 hover:bg-gray-50">
+                        Staff
+                    </button>
+                    <button onclick="fillLogin('teacher@japanarc.com')"
+                        class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-xs font-medium text-gray-500 hover:bg-gray-50">
+                        Teacher
+                    </button>
+                    <button onclick="fillLogin('admin@japanarc.com')"
+                        class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-xs font-medium text-gray-500 hover:bg-gray-50">
+                        Admin
+                    </button>
+                </div>
+            </div>
+
+            <p class="mt-2 text-center text-sm text-gray-600">
+                Don't have an account? <a href="register.html"
+                    class="font-medium text-brand-600 hover:text-brand-500">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth-mock.js"></script>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        function fillLogin(email) {
+            document.getElementById('email-address').value = email;
+            document.getElementById('password').value = 'password';
+        }
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email-address').value;
+            const password = document.getElementById('password').value;
+
+            // Simple mock authentication
+            // In a real app, this would be an API call
+            const auth = new Auth(); // from auth-mock.js
+            const result = auth.login(email, password);
+
+            if (result.success) {
+                // Redirect based on role
+                console.log('Logged in as', result.user.role);
+
+                // Show a loading state or similar
+                const btn = loginForm.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Signing in...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    if (result.user.role === 'student') window.location.href = 'dashboard-student.html';
+                    else if (result.user.role === 'staff') window.location.href = 'dashboard-staff.html';
+                    else if (result.user.role === 'teacher') window.location.href = 'dashboard-teacher.html';
+                    else if (result.user.role === 'admin') window.location.href = 'dashboard-admin.html';
+                }, 800);
+            } else {
+                alert(result.message);
+            }
+        });
+    </script>
+</body>
+
+</html>

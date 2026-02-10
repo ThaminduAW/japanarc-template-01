@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses - Japan ARC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        jp: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#1E3A8A', // Deep Blue
+                            600: '#1e40af',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#DC2626',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased h-screen flex">
+
+    <!-- Sidebar Container -->
+    <div id="sidebar-container" class="transition-all duration-300 z-30"></div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <!-- Topbar -->
+        <div id="topbar-container"></div>
+
+        <!-- Content -->
+        <main class="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">My Learning Path</h2>
+                    <div class="flex bg-gray-200 p-1 rounded-lg">
+                        <button
+                            class="px-4 py-1.5 bg-white shadow-sm rounded-md text-sm font-medium text-gray-900">Active</button>
+                        <button
+                            class="px-4 py-1.5 text-sm font-medium text-gray-500 hover:text-gray-700">Completed</button>
+                        <button class="px-4 py-1.5 text-sm font-medium text-gray-500 hover:text-gray-700">All</button>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Course Card 1 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="relative h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                                alt="Students learning" class="w-full h-full object-cover">
+                            <div
+                                class="absolute top-4 right-4 bg-white/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-brand-900 shadow-sm">
+                                JLPT N4
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                            <button
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div
+                                    class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg text-brand-600">
+                                    <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Intermediate Grammar</h3>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Master complex sentence structures and
+                                particles essential for daily life in Japan.</p>
+
+                            <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg> 45 mins left</span>
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                    </svg> 12 Lessons</span>
+                            </div>
+
+                            <div class="relative pt-1">
+                                <div class="flex mb-2 items-center justify-between">
+                                    <div class="text-right">
+                                        <span class="text-xs font-semibold inline-block text-brand-600">60%
+                                            Complete</span>
+                                    </div>
+                                </div>
+                                <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-brand-100">
+                                    <div style="width:60%"
+                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brand-500">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-full py-2 border border-brand-200 text-brand-700 font-medium rounded-lg hover:bg-brand-50 transition-colors">Resume</button>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 2 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="relative h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                                alt="Kanji writing" class="w-full h-full object-cover">
+                            <div
+                                class="absolute top-4 right-4 bg-white/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-green-700 shadow-sm">
+                                Kanji
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Basic Kanji (100 Characters)</h3>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Learn reading and writing of the most
+                                essential Kanji characters.</p>
+
+                            <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg> 2 hours left</span>
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                    </svg> 20 Lessons</span>
+                            </div>
+
+                            <div class="relative pt-1">
+                                <div class="flex mb-2 items-center justify-between">
+                                    <div class="text-right">
+                                        <span class="text-xs font-semibold inline-block text-brand-600">15%
+                                            Complete</span>
+                                    </div>
+                                </div>
+                                <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-brand-100">
+                                    <div style="width:15%"
+                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brand-500">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-full py-2 border border-brand-200 text-brand-700 font-medium rounded-lg hover:bg-brand-50 transition-colors">Resume</button>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 3 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 opacity-75 grayscale hover:grayscale-0 hover:opacity-100">
+                        <div class="relative h-48 bg-gray-200">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="Speaking practice" class="w-full h-full object-cover">
+                            <div
+                                class="absolute top-4 right-4 bg-gray-100 px-2 py-1 rounded text-xs font-bold text-gray-500 shadow-sm border border-gray-200">
+                                Locked
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <svg class="w-10 h-10 text-white opacity-80" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Business Japanese</h3>
+                            <p class="text-sm text-gray-500 mb-4 line-clamp-2">Learn formal Keigo and business
+                                etiquette.</p>
+
+                            <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg> 3 hours</span>
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                    </svg> 8 Lessons</span>
+                            </div>
+
+                            <div class="relative pt-1">
+                                <div class="flex mb-2 items-center justify-between">
+                                    <div class="text-right">
+                                        <span class="text-xs font-semibold inline-block text-gray-400">Locked</span>
+                                    </div>
+                                </div>
+                                <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-100">
+                                    <div style="width:0%"
+                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gray-500">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-full py-2 border border-gray-200 text-gray-400 font-medium rounded-lg cursor-not-allowed">Complete
+                                N4 First</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Init Script -->
+    <script src="../js/auth-mock.js"></script>
+    <script src="../js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const auth = new Auth();
+
+            let user = auth.getUser();
+            if (!user) {
+                user = { name: 'Kenji Sato', role: 'student', avatar: 'https://ui-avatars.com/api/?name=Kenji+Sato' };
+            }
+
+            // Render Components with '../' base path
+            renderSidebar('student', 'courses', '../');
+            renderTopbar(user, 'My Courses');
+        });
+    </script>
+</body>
+
+</html>
